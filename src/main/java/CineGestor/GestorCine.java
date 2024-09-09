@@ -7,11 +7,13 @@ public class GestorCine {
     private List<Pelicula> peliculas;
     private List<Sala> salas;
     private List<Reserva> reservas;
+    private List<Menu> menu;
 
     public GestorCine() {
         peliculas = new ArrayList<>();
         salas = new ArrayList<>();
         reservas = new ArrayList<>();
+        menu = new ArrayList<>();
     }
 
     public void agregarPelicula(Pelicula pelicula) {
@@ -32,6 +34,7 @@ public class GestorCine {
     public List<Reserva> getReservas() {
         return reservas;
     }
+    public List<Menu> getMenù() {return menu}
 
     public void mostrarPeliculas() {
         for (Pelicula pelicula : peliculas) {
@@ -50,5 +53,9 @@ public class GestorCine {
     }
 
     public void hacerReserva(Reserva reserva) {
+    }
+
+    public void mostrarMenù(){
+        for (Menu menu :)
     }
 }

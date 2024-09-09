@@ -14,7 +14,8 @@ public class Main {
             System.out.println("4. Mostrar Películas");
             System.out.println("5. Mostrar Salas");
             System.out.println("6. Mostrar Reservas");
-            System.out.println("7. Salir");
+            System.out.println("7. Mostrar Menu");
+            System.out.println("8. Salir");
 
             int opcion = scanner.nextInt();
             scanner.nextLine(); // Consumir nueva línea
@@ -99,6 +100,11 @@ public class Main {
                     break;
 
                 case 7:
+                    System.out.println("Menu:");
+                    gestor.mostrarMenù();
+                    break;
+
+                case 8:
                     System.out.println("Saliendo...");
                     scanner.close();
                     System.exit(0);
