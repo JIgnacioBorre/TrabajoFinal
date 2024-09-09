@@ -37,19 +37,22 @@ public class GestorCine {
     }
 
     public static void  mostrarPeliculas() {
-        List<String> LineaDelArchivo = new ArrayList<>();
+        List<String> lineasDelArchivo = new ArrayList<>();
         List<Pelicula> peliculas  = new ArrayList<>();
         try{
-            File archivoConLineas = new File("src/main/resources/Peliculas");
+                File archivoConLineas = new File("src/main/resources/Peliculas");
             Scanner LectorDeArchivo = new Scanner(archivoConLineas);
             while (LectorDeArchivo.hasNextLine()) {
                 String Linea = LectorDeArchivo.nextLine();
-                LineaDelArchivo.add(Linea);
+                lineasDelArchivo.add(Linea);
             }
             LectorDeArchivo.close();
         } catch (FileNotFoundException e) {
             System.out.println("No se encontro el archivo");
             e.printStackTrace();
+        }
+        for(String linea:lineasDelArchivo){
+            System.out.println(linea);
         }
     }
     public void mostrarSalas() {
