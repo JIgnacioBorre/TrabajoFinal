@@ -1,7 +1,10 @@
 package CineGestor;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class GestorCine {
     private List<Pelicula> peliculas;
@@ -33,9 +36,23 @@ public class GestorCine {
         return reservas;
     }
 
-    public void mostrarPeliculas() {
-        for (Pelicula pelicula : peliculas) {
-            System.out.println(pelicula);
+    public static void  mostrarPeliculas() {
+        List<String> lineasDelArchivo = new ArrayList<>();
+        List<Pelicula> peliculas  = new ArrayList<>();
+        try{
+                File archivoConLineas = new File("src/main/resources/Peliculas");
+            Scanner LectorDeArchivo = new Scanner(archivoConLineas);
+            while (LectorDeArchivo.hasNextLine()) {
+                String Linea = LectorDeArchivo.nextLine();
+                lineasDelArchivo.add(Linea);
+            }
+            LectorDeArchivo.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("No se encontro el archivo");
+            e.printStackTrace();
+        }
+        for(String linea:lineasDelArchivo){
+            System.out.println(linea);
         }
     }
     public void mostrarSalas() {

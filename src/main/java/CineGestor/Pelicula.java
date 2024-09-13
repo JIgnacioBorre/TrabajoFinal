@@ -1,45 +1,48 @@
 package CineGestor;
 
+import java.io.*;
+import java.util.*;
+
 public class Pelicula {
-    private String titulo;
-    private String director;
-    private String genero;
-    private int duracion;
-    private int year;
+    private List<String> titulos = new ArrayList<>();
 
-    public Pelicula(String titulo, String director, String genero, int duracion, int year) {
-        this.titulo = titulo;
-        this.director = director;
-        this.genero = genero;
-        this.duracion = duracion;
-        this.year = year;
+    public Pelicula() {
+        cargarTitulos();
     }
 
-    public String getTitulo() {return titulo; }
-    public void setTitulo(String titulo) { this.titulo = titulo; }
-
-    public String getDirector() {return director; }
-    public void setDirector(String director) { this.director = director; }
-
-    public String getGenero() {return genero; }
-    public void setGenero(String genero) { this.genero = genero; }
-
-    public int getDuracion() {return duracion; }
-    public void setDuracion(int duracion) { this.duracion = duracion; }
-
-    public int getYear() {return year; }
-    public void setYear(int year) { this.year = year; }
-
-    public String toString() {
-        return titulo + " (" + year + ")";
+    private void cargarTitulos() {
+        try (BufferedReader br = new BufferedReader(new FileReader("src/main/resources/Peliculas"))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                // Usar punto y coma como delimitador
+                String[] partes = linea.split(";", 2); // Separar por el primer punto y coma
+                if (partes.length > 1) {
+                    // La segunda parte contiene el título y el resto de los datos
+                    String resto = partes[1];
+                    String[] restoPartes = resto.split(";", 2); // Separar el título de los otros datos
+                    if (restoPartes.length > 0) {
+                        String titulo = restoPartes[0].trim(); // Obtener el título
+                        titulos.add(titulo);
+                    }
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-
-
-
-
-
-
-
-
+    public List<String> obtenerTitulos() {
+        return titulos;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
