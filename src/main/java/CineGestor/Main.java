@@ -1,6 +1,8 @@
 package CineGestor;
 
-import java.util.*;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -87,22 +89,105 @@ public class Main {
                     // Obtener el horario seleccionado
                     String horarioSeleccionado = (String) horariosConSalas.keySet().toArray()[horarioEleccion - 1];
                     Sala salaAsignada = horariosConSalas.get(horarioSeleccionado);
+                    UbicacionAsientos ubicacionAsientos = new UbicacionAsientos(); // Crear instancia de UbicacionAsientos para la sala seleccionada
 
                     // Mostrar información del horario y sala
                     System.out.println("Has seleccionado el horario: " + horarioSeleccionado);
                     System.out.println("Sala asignada: " + salaAsignada);
-                }
-            }
 
-            // Preguntar al usuario si desea volver a la lista de películas
-            System.out.print("¿Deseas seleccionar otra película? (s/n): ");
-            String respuesta = scanner.nextLine();
-            if (!respuesta.equalsIgnoreCase("s")) {
-                System.out.println("Saliendo del programa...");
-                break;
+                    // Mostrar tipos de entrada disponibles
+                    System.out.println("Tipos de entrada disponibles:");
+                    System.out.println("1. Standard - Precio: $" + Entrada.PRECIO_STANDARD);
+                    System.out.println("2. Premium - Precio: $" + Entrada.PRECIO_PREMIUM);
+                    System.out.println("3. 2x1 Standard - Precio: $" + Entrada.PRECIO_2X1_STANDARD);
+                    System.out.println("4. 2x1 Premium - Precio: $" + Entrada.PRECIO_2X1_PREMIUM);
+
+                    // Solicitar el tipo de entrada
+                    System.out.print("Introduce el número del tipo de entrada (1 para 'standard', 2 para 'premium', 3 para '2x1 standard', 4 para '2x1 premium'): ");
+                    int tipoEntradaCodigo = scanner.nextInt();
+                    scanner.nextLine();  // Consumir el salto de línea después del número
+
+                    // Mostrar asientos disponibles para el tipo de entrada seleccionado
+                    ubicacionAsientos.mostrarAsientos(tipoEntradaCodigo);
+
+                    // Solicitar la cantidad de entradas
+                    System.out.print("Introduce la cantidad de entradas que deseas comprar: ");
+                    int cantidadEntradas = scanner.nextInt();
+                    scanner.nextLine();  // Consumir el salto de línea después del número
+
+                    // Verificar que la cantidad de entradas no exceda la capacidad de la sala
+                    if (cantidadEntradas > capacidadSala) {
+                        System.out.println("La cantidad de entradas no puede ser mayor que la capacidad de la sala (" + capacidadSala + ").");
+                        continue;  // Volver a solicitar la cantidad
+                    }
+
+                    // Verificar que haya suficientes asientos disponibles
+                    int asientosDisponibles = contarAsientosDisponibles(ubicacionAsientos, tipoEntradaCodigo);
+                    if (cantidadEntradas > asientosDisponibles) {
+                        System.out.println("No hay suficientes asientos disponibles para el tipo de entrada seleccionado.");
+                        continue;  // Volver a mostrar los asientos
+                    }
+
+                    // Solicitar y seleccionar asientos
+                    int asientosAsignados = 0;
+                    while (asientosAsignados < cantidadEntradas) {
+                        System.out.print("Introduce el número de la fila (1 para la fila 1, 2 para la fila 2, en caso de entrada premiun elegir nro 5 o 6): ");
+                        int filaSeleccionada = scanner.nextInt();
+                        System.out.print("Introduce el número de la columna (1 para la columna 1, 2 para la columna 2, etc.): ");
+                        int columnaSeleccionada = scanner.nextInt();
+
+                        if (ubicacionAsientos.seleccionarAsiento(filaSeleccionada, columnaSeleccionada)) {
+                            System.out.println("Asiento seleccionado en la fila " + filaSeleccionada + ", columna " + columnaSeleccionada);
+                            asientosAsignados++;
+                        } else {
+                            System.out.println("El asiento seleccionado ya está ocupado o fuera de rango. Por favor, elige otro.");
+                        }
+                    }
+
+                    // Mostrar todos los asientos con la selección actual
+                    ubicacionAsientos.mostrarTodosLosAsientos();
+
+                    System.out.println("Compra realizada. ¡Disfruta de la película!");
+                }
             }
         }
 
         scanner.close();
     }
+
+    // Método para contar asientos disponibles según el tipo de entrada
+    private static int contarAsientosDisponibles(UbicacionAsientos ubicacionAsientos, int tipoEntrada) {
+        int filasInicio = 0;
+        int filasFin = ubicacionAsientos.getAsientos().length;
+
+        switch (tipoEntrada) {
+            case 1: // Standard
+            case 3: // 2x1 Standard
+                filasFin = 5; // Filas 1 a 5 (filas 0 a 4 en la matriz)
+                break;
+            case 2: // Premium
+            case 4: // 2x1 Premium
+                filasInicio = 5; // Filas 6 a 7 (filas 5 a 6 en la matriz)
+                filasFin = 7;   // Limitar a filas 6 y 7 (filas 5 y 6 en la matriz)
+                break;
+        }
+
+        int asientosDisponibles = 0;
+        for (int fila = filasInicio; fila < filasFin; fila++) {
+            for (int columna = 0; columna < ubicacionAsientos.getAsientos()[fila].length; columna++) {
+                if (!ubicacionAsientos.getAsientos()[fila][columna]) {
+                    asientosDisponibles++;
+                }
+            }
+        }
+        return asientosDisponibles;
+    }
 }
+
+
+
+
+
+
+
+
