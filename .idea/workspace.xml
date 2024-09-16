@@ -5,14 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="32f2f3c1-9996-421f-bc42-322969a2adac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/CineGestor/VincularPeliculasConDescripciones.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Descripciones" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/CineGestor/Horario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/CineGestor/SalaManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/horarios" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CineGestor/GestorCine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CineGestor/GestorCine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CineGestor/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CineGestor/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CineGestor/Pelicula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CineGestor/Pelicula.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CineGestor/Sala.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CineGestor/Sala.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Peliculas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Peliculas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CineGestor/VincularPeliculasConDescripciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CineGestor/VincularPeliculasConDescripciones.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,25 +39,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Application.VincularArchivos.executor": "Run",
-    "Application.VincularPeliculasConDescripciones.executor": "Run",
-    "Java Scratch.Scratch.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "AgregamosArchivos",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/Usuario.PC-INF-PRUEBA/IdeaProjects/TrabajoFinal/src/main/java/org/example/Main.java",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.VincularArchivos.executor&quot;: &quot;Run&quot;,
+    &quot;Application.VincularPeliculasConDescripciones.executor&quot;: &quot;Run&quot;,
+    &quot;Java Scratch.Scratch.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;AgregamosArchivos&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Usuario.PC-INF-PRUEBA/IdeaProjects/TrabajoFinal/src/main/java/org/example/Main.java&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Usuario.PC-INF-PRUEBA\IdeaProjects\TrabajoFinal\src\main\resources" />
@@ -137,7 +137,10 @@
       <updated>1725659061037</updated>
       <workItem from="1725659062206" duration="3940000" />
       <workItem from="1725663659502" duration="3207000" />
-      <workItem from="1725916594213" duration="7496000" />
+      <workItem from="1725916594213" duration="7938000" />
+      <workItem from="1726261129498" duration="7000" />
+      <workItem from="1726261145093" duration="8863000" />
+      <workItem from="1726522077975" duration="636000" />
     </task>
     <servers />
   </component>
