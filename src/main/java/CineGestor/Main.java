@@ -91,6 +91,22 @@ public class Main {
                     // Mostrar información del horario y sala
                     System.out.println("Has seleccionado el horario: " + horarioSeleccionado);
                     System.out.println("Sala asignada: " + salaAsignada);
+
+                    // Mostrar asientos disponibles
+                    UbicacionAsientos ubicacionAsientos = salaAsignada.getUbicacionAsientos();
+                    ubicacionAsientos.mostrarAsientos();
+
+                    // Solicitar al usuario que seleccione un asiento
+                    System.out.print("Introduce la fila del asiento (1-10): ");
+                    int fila = scanner.nextInt();
+                    System.out.print("Introduce la columna del asiento (1-5): ");
+                    int columna = scanner.nextInt();
+
+                    if (ubicacionAsientos.seleccionarAsiento(fila, columna)) {
+                        System.out.println("Has seleccionado el asiento " + fila + "-" + columna);
+                    } else {
+                        System.out.println("No se pudo seleccionar el asiento. Puede que ya esté ocupado o la selección sea inválida.");
+                    }
                 }
             }
 
@@ -106,3 +122,4 @@ public class Main {
         scanner.close();
     }
 }
+
