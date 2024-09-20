@@ -11,28 +11,47 @@ public class UbicacionAsientos {
 
     // Mostrar los asientos disponibles con números de fila
     public void mostrarAsientos(int tipoEntrada) {
-        int filasInicio = 0;
-        int filasFin = asientos.length;
+        int filasInicio;
+        int filasFin;
 
         switch (tipoEntrada) {
             case 1: // Standard
             case 3: // 2x1 Standard
-                filasFin = 5; // Filas 1 a 5 (filas 0 a 4 en la matriz)
+                System.out.println("Asientos disponibles para Standard:");
+                // Mostrar filas 1 a 4
+                filasInicio = 0; // 0 para la fila 1
+                filasFin = 4; // 4 para la fila 4
+                for (int fila = filasInicio; fila < filasFin; fila++) {
+                    System.out.print("Fila " + (fila + 1) + ": ");
+                    for (int columna = 0; columna < asientos[fila].length; columna++) {
+                        System.out.print((asientos[fila][columna] ? "[X]" : "[ ]") + " ");
+                    }
+                    System.out.println();
+                }
+                // Mostrar filas 7 a 10
+                filasInicio = 6; // 6 para la fila 7
+                filasFin = 10; // 10 para la fila 10
+                for (int fila = filasInicio; fila < filasFin; fila++) {
+                    System.out.print("Fila " + (fila + 1) + ": ");
+                    for (int columna = 0; columna < asientos[fila].length; columna++) {
+                        System.out.print((asientos[fila][columna] ? "[X]" : "[ ]") + " ");
+                    }
+                    System.out.println();
+                }
                 break;
             case 2: // Premium
             case 4: // 2x1 Premium
-                filasInicio = 5; // Filas 6 a 7 (filas 5 a 6 en la matriz)
-                filasFin = 7;   // Limitar a filas 6 y 7 (filas 5 y 6 en la matriz)
+                filasInicio = 4; // Filas 5 a 6 (filas 4 a 5 en la matriz)
+                filasFin = 6;   // Limitar a filas 5 y 6 (filas 4 y 5 en la matriz)
+                System.out.println("Asientos disponibles para Premium:");
+                for (int fila = filasInicio; fila < filasFin; fila++) {
+                    System.out.print("Fila " + (fila + 1) + ": ");
+                    for (int columna = 0; columna < asientos[fila].length; columna++) {
+                        System.out.print((asientos[fila][columna] ? "[X]" : "[ ]") + " ");
+                    }
+                    System.out.println();
+                }
                 break;
-        }
-
-        System.out.println("Asientos disponibles para el tipo de entrada seleccionado:");
-        for (int fila = filasInicio; fila < filasFin; fila++) {
-            System.out.print("Fila " + (fila + 1) + ": "); // Mostrar el número de fila
-            for (int columna = 0; columna < asientos[fila].length; columna++) {
-                System.out.print((asientos[fila][columna] ? "[X]" : "[ ]") + " ");
-            }
-            System.out.println();
         }
     }
 

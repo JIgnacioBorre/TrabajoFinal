@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="32f2f3c1-9996-421f-bc42-322969a2adac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/CineGestor/Entrada.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/CineGestor/UbicacionAsientos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/CineGestor/CineGestorGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/CineGestorGUI.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/CineGestorGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CineGestor/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CineGestor/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CineGestor/Sala.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CineGestor/Sala.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CineGestor/VincularPeliculasConDescripciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CineGestor/VincularPeliculasConDescripciones.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CineGestor/Pelicula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CineGestor/Pelicula.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CineGestor/UbicacionAsientos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CineGestor/UbicacionAsientos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Peliculas" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Peliculas" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,13 +41,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.CineGestorGUI.executor": "Run",
     "Application.Main.executor": "Run",
     "Application.VincularArchivos.executor": "Run",
     "Application.VincularPeliculasConDescripciones.executor": "Run",
     "Java Scratch.Scratch.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "ClaseSalaYHorario",
+    "git-widget-placeholder": "ClaseEntradaYUbicacionAsiento",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -61,7 +64,20 @@
       <recent name="C:\Users\Usuario.PC-INF-PRUEBA\IdeaProjects\TrabajoFinal\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.CineGestorGUI">
+    <configuration name="CineGestorGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CineGestor.CineGestorGUI" />
+      <module name="TrabajoFinal" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="CineGestor.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CineGestor.Main" />
       <module name="TrabajoFinal" />
@@ -110,6 +126,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CineGestorGUI" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.VincularPeliculasConDescripciones" />
         <item itemvalue="Application.VincularArchivos" />
@@ -139,6 +156,7 @@
       <workItem from="1726261129498" duration="7000" />
       <workItem from="1726261145093" duration="8863000" />
       <workItem from="1726522077975" duration="636000" />
+      <workItem from="1726859172624" duration="7104000" />
     </task>
     <servers />
   </component>
