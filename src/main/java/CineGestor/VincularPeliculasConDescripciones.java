@@ -29,7 +29,7 @@ public class VincularPeliculasConDescripciones {
                         System.err.println("Error al convertir el ID a número en descripciones: " + parts[0]);
                     }
                 } else {
-                    System.err.println("Formato inválido en descripciones.txt: " + line);
+
                 }
             }
         } catch (IOException e) {
